@@ -4,8 +4,6 @@ import gcp_sentiment_analysis
 
 class twit:
 
-
-
     @classmethod
     def search(cls, keyword):
         auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
@@ -24,4 +22,5 @@ class twit:
             except StopIteration:
                 break
         file_object.close()
-        gcp_sentiment_analysis.analyze("tweets.txt")
+
+        return gcp_sentiment_analysis.analyze("tweets.txt")
