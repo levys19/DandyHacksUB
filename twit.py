@@ -19,7 +19,7 @@ class twit:
                 break
             try:
                 for tweets in page:
-                    file_object.write(str(tweets.text) + "\n" + "\n")
+                    file_object.write(str(tweets.text) + "\n")
                     counter += 1
             except StopIteration:
                 break
