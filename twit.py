@@ -1,16 +1,10 @@
 from credentials import *
 import tweepy
-# from gcp_sentiment_analysis import gcp_stuff
+import gcp_sentiment_analysis
 
 class twit:
 
-    @classmethod
-    def analyze(cls, tweetList):
-        gcp_analyze = gcp_stuff()
-        for tweets in tweetList:
-            sentimentList.append(gcp_analyze(tweets))
-        sentimentList = []
-        return sentimentList
+
 
     @classmethod
     def search(cls, keyword):
@@ -18,10 +12,16 @@ class twit:
         auth.set_access_token(access_token, access_token_secret)
         api = tweepy.API(auth)
         file_object  = open("tweets.txt", "w")
-        for page in tweepy.Cursor(api.search,q= keyword, lang = 'en', rpp = '100').pages():
+        counter = 0
+        results = tweepy.Cursor(api.search,q= keyword, lang = 'en', rpp = '100', pages= '1').pages()
+        for page in results:
+            if counter > 50:
+                break
             try:
                 for tweets in page:
                     file_object.write(str(tweets.text) + "\n" + "\n")
+                    counter += 1
             except StopIteration:
                 break
         file_object.close()
+        gcp_sentiment_analysis.analyze("tweets.txt")
