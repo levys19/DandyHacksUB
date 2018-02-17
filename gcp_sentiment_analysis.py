@@ -10,24 +10,23 @@ def compute_sentiment(annotations):
     mixed_sentiments = 0
     for index, sentence in enumerate(annotations.sentences):
         sentence_sentiment = sentence.sentiment.score
-        print('Tweet: \n{} \nSentiment Score: \n{}'.format(
-            sentence.text.content, sentence_sentiment))
+        print('Tweet: \n{} \nSentiment Score: \n{}'.format(sentence.text.content, sentence_sentiment))
+        sentiment_list.append(sentence_sentiment)
+
         if sentence_sentiment > 0.15:
-            sentiment_list.append(1)
             positive_sentiments += 1
         elif sentence_sentiment < -0.1:
-                sentiment_list.append(-1)
-                negative_sentiments += 1
+            negative_sentiments += 1
         else:
             sentiment_list.append(0)
             mixed_sentiments += 1
     print("Total tweets:" + str(len(sentiment_list)))
     print("Number of Positive Tweets:" + str(positive_sentiments))
-    print("Percentage of Positive Tweets:" + str(positive_sentiments/len(sentiment_list)) + "%")
+    print("Percentage of Positive Tweets:" + str((positive_sentiments/len(sentiment_list))*100) + "%")
     print("Number of Negative Tweets:" + str(negative_sentiments))
-    print("Percentage of Negative Tweets:" + str(negative_sentiments / len(sentiment_list)) + "%")
+    print("Percentage of Negative Tweets:" + str((negative_sentiments / len(sentiment_list))*100) + "%")
     print("Number of Mixed/Neutral Tweets:" + str(mixed_sentiments))
-    print("Percentage of Mixed/Neutral Tweets:" + str(mixed_sentiments / len(sentiment_list)) + "%")
+    print("Percentage of Mixed/Neutral Tweets:" + str((mixed_sentiments / len(sentiment_list))*100) + "%")
     avg_sentiment_value = sum(sentiment_list)/len(sentiment_list)
     print("Overall Sentiment Value:" + str(avg_sentiment_value))
     if avg_sentiment_value > 0.15:
@@ -53,4 +52,3 @@ def analyze(filename):
     # Print results
     print("Sentiment:")
     print(compute_sentiment(annotations))
-
