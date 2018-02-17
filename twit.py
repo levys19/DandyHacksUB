@@ -15,7 +15,7 @@ class twit:
         counter = 0
         results = tweepy.Cursor(api.search,q= keyword, lang = 'en', rpp = '100', pages= '1').pages()
         for page in results:
-            if counter > 50:
+            if counter > 100:
                 break
             try:
                 for tweets in page:
