@@ -7,7 +7,7 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="bootstrap/css/custom_index.css">
+    <link rel="stylesheet" type="text/css" href="bootstrap/css/custom_graph.css">
 
     <title>Poll Request</title>
   </head>
@@ -23,12 +23,9 @@
   <div class="jumbotron">
 	<div class="container">
         <h1><b>Poll Request</b></h1>
-          <h2>The Opinion of Tweeters</h2>
-          <form action="{{url_for('graph')}}" id="form" action="." method="POST">
-            <div class = "inputBox">
-              <input type="text" name="key_word" placeholder="" size = "30"><br><br
-            </div>
-            <p><a class="btn btn-primary btn-lg" type="submit" href="#" role="button">Tweets Say</a> </p>
+
+          <form action="{{url_for('index')}}" id="form" action="." method="POST">
+            <p><a class="btn btn-primary btn-lg btn-info" href="index.html" role="button">Poll Again</a> </p>
           </form>
 	</div>
   </div>

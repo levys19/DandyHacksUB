@@ -1,0 +1,20 @@
+.jumbotron {
+	background: linear-gradient(to bottom, white, #124173 ); /*#FF8C00*/
+	color: white;
+	text-align: center;
+	font-size: small;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    font-family: Helvetica, SansSerif;
+}
+
+.btn-primary {
+	background-color: transparent;
+    border-color: white;
+}
+
+.btn-primary:hover {
+    background-color: #3AEAD8;
+    border-color: white;
+}
