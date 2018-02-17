@@ -1,9 +1,9 @@
-# import argparse
-#
-# from google.cloud import language
-# from google.cloud.language import enums
-# from google.cloud.language import types
-#
+import argparse
+
+from google.cloud import language
+from google.cloud.language import enums
+from google.cloud.language import types
+
 def print_result(annotations):
 	score = annotations.document_sentiment.score
 	magnitude = annotations.document_sentiment.magnitude
@@ -32,14 +32,3 @@ def analyze(filename):
 
 	#Print results
 	print_result(annotations)
-
-if __name__ == '__main__':
-	parser = argparse.ArgumentParser(
-			description=__doc__,
-			formatter_class=argparse.RawDescriptionHelpFormatter)
-	parser.add_argument(
-			'filename',
-			help='The filename of the text you\'d like to analyze.')
-	args=parser.parse_args()
-
-	analyze(args.filename)
