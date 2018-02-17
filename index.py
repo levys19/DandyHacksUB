@@ -14,4 +14,4 @@ def graph():
     keyword = request.form['key_word']
     searchTwit = twit()
     twit.search(keyword)
-    return render_template('graph.html',)
+    return render_template('graph.html')
