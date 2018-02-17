@@ -27,4 +27,3 @@ def graph():
     # searchTwit = twit()
     # twit.search(keyword)
     return render_template('graph.html', chart=plotpie())
-
