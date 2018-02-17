@@ -9,11 +9,6 @@
     font-family: Helvetica, SansSerif;
 }
 
-.jumbotron p {
-	color: white;
-	font-size: 26px;
-}
-
 .btn-primary {
 	background-color: transparent;
     border-color: white;
@@ -22,19 +17,4 @@
 .btn-primary:hover {
     background-color: #3AEAD8;
     border-color: white;
-}
-
-.inputBox {
-	color: #0f0f0f;
-}
-
-h1 {
-    text-align: center;
-    font-size: 50px;
-    color: #9AA7A6;
-}
-
-h2 {
-    text-align: center;
-    font-size: 35px;
 }
