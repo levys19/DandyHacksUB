@@ -24,6 +24,9 @@ def graph():
     # grabs the keyword from the form
     keyword = request.form['key_word']
     searchTwit = twit()
-    results = twit.search(keyword)
+    twit.writeToText(keyword)
+    results = twit.search()
+    twit.frequency()
     #grab 3 numbers from results
+
     return render_template('graph.html', chart=plotpie(results))
