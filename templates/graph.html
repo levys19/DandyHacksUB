@@ -19,7 +19,11 @@
           <h1><b>Poll Request</b></h1><br>
           <p>
           {% for items in sentence %}
-              <span class="nowrap"; style="font-size: 50px">{{items}}</span>
+              {% if items in dictionary %}
+                  <span class="nowrap"; style="font-size: {{ (dictionary[items] * 2) if (dictionary[items] * 2) > 10 else 15}}px">{{items}}</span>
+              {% else %}
+                  <span class="nowrap"; style="font-size: 15px">{{items}}</span>
+              {% endif%}
           {% endfor %}
           </p>
           {{chart | safe}}<br>
