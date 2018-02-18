@@ -26,6 +26,8 @@ def graph():
     searchTwit = twit()
     twit.writeToText(keyword)
     results = twit.search()
-    sentence = NLTK_POS.makeSentence(twit.frequency() , keyword)
+    makeWordCount = twit.wordCount()
+    sentence = NLTK_POS.makeSentence(twit.frequency(makeWordCount), keyword)
+    print(makeWordCount)
 
     return render_template('graph.html', chart = plotpie(results), sentence = sentence)

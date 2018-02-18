@@ -28,20 +28,24 @@ class twit:
         return gcp_sentiment_analysis.analyze("tweets.txt")
 
     @classmethod
-    def frequency(cls):
+    def wordCount(cls):
         file_object = open("tweets.txt","r")
         wordList = file_object.read().split()
-        wordCount = {}
+        wordDictionary = {}
         for word in wordList:
             word = word.lower()
-            if word in wordCount and word != "rt":
-                wordCount[word] += 1
+            if word in wordDictionary and word != "rt":
+                wordDictionary[word] += 1
             else:
-                wordCount[word] = 1
+                wordDictionary[word] = 1
         file_object.close()
+        return wordDictionary
+
+    @classmethod
+    def frequency(cls , wordCountDictionary):
         highestFreq = []
-        for items in wordCount.keys():
-            highestFreq.append((wordCount[items],items))
+        for items in wordCountDictionary.keys():
+            highestFreq.append((wordCountDictionary[items],items))
         highestFreq = reversed(sorted(highestFreq))
         reversedFreq = []
         for items in highestFreq:
