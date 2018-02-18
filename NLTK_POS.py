@@ -1,5 +1,4 @@
 import nltk
-nltk.download('averaged_perceptron_tagger')
 import random
 from twit import twit
 def makeSentence(listOfWords, keyword):
@@ -28,10 +27,10 @@ def makeSentence(listOfWords, keyword):
         if len(nouns) >= 1 and len(adjectives) >= 1 and len(verbs) >= 1 and len(adverbs) >= 1:
             break
     if keyPOS[1][0] == "N":
-        print(keyword + " is " + adverbs[0] + " " + verbs[0])
+        return (keyword + " is " + adverbs[0] + " " + verbs[0])
     elif keyPOS[1][0] == "J":
-        print("A " + keyword + " " + nouns[0] + " can just go " + adverbs[0] + " " + verbs[0])
+        return ("A " + keyword + " " + nouns[0] + " can just go " + adverbs[0] + " " + verbs[0])
     elif keyPOS[1][0] == "V":
-        print("The " + nouns[0] + " really should " + keyword)
+        return ("The " + nouns[0] + " really should " + keyword)
     elif keyPOS[1][0] == "R":
-        print(nouns[0] + " is a " + adjectives[0] + " thing " + " and always " + keyword + " " + verbs[0])
+        return (nouns[0] + " is a " + adjectives[0] + " thing " + " and always " + keyword + " " + verbs[0])
