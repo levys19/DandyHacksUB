@@ -18,3 +18,8 @@
     background-color: #3AEAD8;
     border-color: white;
 }
+
+.sentence {
+    display : inline;
+    font-size: xx-large;
+}
