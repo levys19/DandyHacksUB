@@ -17,11 +17,15 @@
   <div class="jumbotron">
       <div class="container">
           <h1><b>Poll Request</b></h1><br>
-          <div class="sentence">
+          <p>
           {% for items in sentence %}
-               {{items}}
+              {% if items in dictionary %}
+                  <span class="nowrap"; style="font-size: {{ (dictionary[items] * 2) if (dictionary[items] * 2) > 10 else 15}}px">{{items}}</span>
+              {% else %}
+                  <span class="nowrap"; style="font-size: 15px">{{items}}</span>
+              {% endif%}
           {% endfor %}
-          </div>
+          </p>
           {{chart | safe}}<br>
           <form action="{{url_for('index')}}" id="form" action="." method="POST">
             <a class="btn btn-primary btn-lg btn-info" href="/" role="button">Poll Again</a>
