@@ -32,6 +32,7 @@ class twit:
         file_object = open("tweets.txt","r")
         wordList = file_object.read().split()
         wordDictionary = {}
+        counterWords = {"if", "is", "the", "that", "rt", "at", "not", "is", "or", "will", "by", "to", "be", "after"}
         for word in wordList:
             word = word.lower()
             if word in wordDictionary and word != "rt":

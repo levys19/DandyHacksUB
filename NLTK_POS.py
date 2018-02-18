@@ -28,7 +28,7 @@ def makeSentence(listOfWords, keyword):
         if len(nouns) >= 1 and len(adjectives) >= 1 and len(verbs) >= 1 and len(adverbs) >= 1:
             break
     if keyPOS[1][0] == "N":
-        return ([keyword,  " does ", adverbs[0], verbs[0]])
+        return ([keyword,  verbs[0], " very " , adjectives[0]])
     elif keyPOS[1][0] == "J":
         return (["A ", keyword, nouns[0], " can just go ", adverbs[0], verbs[0]])
     elif keyPOS[1][0] == "V":
