@@ -1,4 +1,5 @@
 import nltk
+nltk.download('averaged_perceptron_tagger')
 import random
 from twit import twit
 def makeSentence(listOfWords, keyword):
@@ -6,19 +7,24 @@ def makeSentence(listOfWords, keyword):
     adjectives = list()
     verbs = list()
     adverbs = list()
-    keyPOS = nltk.pos_tag(keyword)
-
-    for word in listOfWords:
-        POS_tweet = nltk.pos_tag(word)
-        if POS_tweet[1][0] == "N":
-            nouns.append(POS_tweet[0])
-        elif POS_tweet[1][0] == "J":
-            adjectives.append(POS_tweet[0])
-        elif POS_tweet[1][0] == "V":
-            verbs.append(POS_tweet[0])
-        elif POS_tweet[1][0] == "R":
-            adverbs.append(POS_tweet[0])
-
+    print(list(keyword))
+    keyPOS = nltk.pos_tag([keyword])
+    print("------------")
+    print(keyPOS)
+    print("------------")
+    keyPOS = keyPOS[0]
+    POS_tweet = nltk.pos_tag(listOfWords)
+    print(POS_tweet)
+    for words in POS_tweet:
+        print(words)
+        if words[1][0] == "N":
+            nouns.append(words[0])
+        elif words[1][0] == "J":
+            adjectives.append(words[0])
+        elif words[1][0] == "V":
+            verbs.append(words[0])
+        elif words[1][0] == "R":
+            adverbs.append(words[0])
         if len(nouns) >= 1 and len(adjectives) >= 1 and len(verbs) >= 1 and len(adverbs) >= 1:
             break
     if keyPOS[1][0] == "N":

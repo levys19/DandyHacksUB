@@ -39,8 +39,11 @@ class twit:
             else:
                 wordCount[word] = 1
         file_object.close()
-        print(wordCount)
         highestFreq = []
         for items in wordCount.keys():
             highestFreq.append((wordCount[items],items))
-        print(sorted(highestFreq))
+        highestFreq = reversed(sorted(highestFreq))
+        reversedFreq = []
+        for items in highestFreq:
+            reversedFreq.append(items[1])
+        return reversedFreq
