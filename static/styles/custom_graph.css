@@ -19,7 +19,6 @@
     border-color: white;
 }
 
-.sentence {
-    display : inline;
-    font-size: xx-large;
+.nowrap {
+    white-space: nowrap;
 }
