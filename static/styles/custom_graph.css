@@ -18,3 +18,7 @@
     background-color: #3AEAD8;
     border-color: white;
 }
+
+.nowrap {
+    white-space: nowrap;
+}

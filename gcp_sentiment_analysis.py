@@ -29,11 +29,8 @@ def compute_sentiment(annotations):
     print("Percentage of Mixed/Neutral Tweets:" + str((mixed_sentiments / len(sentiment_list))*100) + "%")
     avg_sentiment_value = sum(sentiment_list)/len(sentiment_list)
     print("Overall Sentiment Value:" + str(avg_sentiment_value))
-    if avg_sentiment_value > 0.15:
-        return "Overall Positive Sentiment"
-    if avg_sentiment_value < -0.1:
-        return "Overall Negative Sentiment"
-    return "Overall Mixed Sentiment"
+
+    return (positive_sentiments, negative_sentiments, mixed_sentiments)
 
 
 def analyze(filename):
@@ -51,4 +48,4 @@ def analyze(filename):
 
     # Print results
     print("Sentiment:")
-    print(compute_sentiment(annotations))
+    return compute_sentiment(annotations)
