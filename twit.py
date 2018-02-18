@@ -35,7 +35,7 @@ class twit:
         counterWords = {"if", "is", "the", "that", "rt", "at", "not", "is", "or", "will", "by", "to", "be", "after"}
         for word in wordList:
             word = word.lower()
-            if word in wordDictionary and word != "rt":
+            if word in wordDictionary and word != "rt" and word not in counterWords:
                 wordDictionary[word] += 1
             else:
                 wordDictionary[word] = 1
