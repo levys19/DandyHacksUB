@@ -1,7 +1,7 @@
 from flask import Flask, redirect, render_template, request, url_for
 import json, requests
 from twit import twit
-
+import NLTK_POS
 import plotly.plotly as py
 import plotly.graph_objs as go
 import plotly
@@ -24,6 +24,10 @@ def graph():
     # grabs the keyword from the form
     keyword = request.form['key_word']
     searchTwit = twit()
-    results = twit.search(keyword)
-    #grab 3 numbers from results
-    return render_template('graph.html', chart=plotpie(results))
+    twit.writeToText(keyword)
+    results = twit.search()
+    makeWordCount = twit.wordCount()
+    sentence = NLTK_POS.makeSentence(twit.frequency(makeWordCount), keyword)
+    print(makeWordCount)
+
+    return render_template('graph.html', chart = plotpie(results), sentence = sentence)

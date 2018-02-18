@@ -17,14 +17,17 @@
   <div class="jumbotron">
       <div class="container">
           <h1><b>Poll Request</b></h1><br>
-
-          <!--<canvas id="myChart" width="400" height="400"></canvas>-->
+          <div class="sentence">
+          {% for items in sentence %}
+               {{items}}
+          {% endfor %}
+          </div>
           {{chart | safe}}<br>
           <form action="{{url_for('index')}}" id="form" action="." method="POST">
-            <p><a class="btn btn-primary btn-lg btn-info" href="/" role="button">Poll Again</a> </p>
+            <a class="btn btn-primary btn-lg btn-info" href="/" role="button">Poll Again</a>
           </form>
-	</div>
+     </div>
   </div>
+
   </body>
 </html>
-
