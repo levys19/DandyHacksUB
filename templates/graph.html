@@ -17,11 +17,11 @@
   <div class="jumbotron">
       <div class="container">
           <h1><b>Poll Request</b></h1><br>
-          <div class="sentence">
+          <p>
           {% for items in sentence %}
-               {{items}}
+              <span class="nowrap"; style="font-size: 50px">{{items}}</span>
           {% endfor %}
-          </div>
+          </p>
           {{chart | safe}}<br>
           <form action="{{url_for('index')}}" id="form" action="." method="POST">
             <a class="btn btn-primary btn-lg btn-info" href="/" role="button">Poll Again</a>
