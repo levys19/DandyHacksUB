@@ -17,7 +17,7 @@
   <div class="jumbotron">
       <div class="container">
           <h1><b>Poll Request</b></h1><br>
-
+          <p> {{sentence}} </p>
           <!--<canvas id="myChart" width="400" height="400"></canvas>-->
           {{chart | safe}}<br>
           <form action="{{url_for('index')}}" id="form" action="." method="POST">
@@ -25,5 +25,6 @@
           </form>
      </div>
   </div>
+
   </body>
 </html>
