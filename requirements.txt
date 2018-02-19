@@ -3,3 +3,4 @@ Jinja2==2.10
 plotly==2.4.0
 tweepy==3.5.0
 google==2.0.1
+gunicorn==19.0.0
