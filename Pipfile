@@ -1,0 +1,19 @@
+[[source]]
+
+url = "https://pypi.python.org/simple"
+verify_ssl = true
+name = "pypi"
+
+
+[dev-packages]
+
+
+
+[packages]
+
+Flask = "==0.12.2"
+"Jinja2" = "==2.10"
+plotly = "==2.4.0"
+tweepy = "==3.5.0"
+google = "==2.0.1"
+gunicorn = "==19.0.0"
