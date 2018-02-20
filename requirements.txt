@@ -5,3 +5,4 @@ tweepy==3.5.0
 google==2.0.1
 gunicorn==19.7.1
 nltk==3.0.0
+google-cloud==0.32.0
